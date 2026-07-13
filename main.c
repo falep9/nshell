@@ -35,7 +35,7 @@ int main(){
     int era_builtin = executar_builtin(args, &rodando);
 
     if (!era_builtin) {
-        printf("Comando nao encontrado: %s\n", args[0]);
+        executar_processo(args);
     }
   }
   return 0;
