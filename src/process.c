@@ -9,14 +9,12 @@ void executar_processo(char *args[]) {
     pid_t pid = fork();
 
     if (pid < 0) {
-        // fork falhou
         perror("nshell: erro ao criar processo");
         return;
     }
 
     if (pid == 0) {
         execvp(args[0], args);
-        // Se o código chegou até aqui, é porque execvp falhou
         perror("nshell");
         _exit(1);
     }
